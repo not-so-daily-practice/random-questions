@@ -41,7 +41,7 @@ def verification_recursive(node, min=-math.inf, max=math.inf):
     if node is None:
         return True
     if node.key > min and \
-                    node.key < max and \
+            node.key < max and \
             verification_recursive(node.left, min, node.key) and \
             verification_recursive(node.right, node.key, max):
         return True
@@ -57,3 +57,6 @@ insert(example_tree, 14)
 insert(example_tree, 4)
 insert(example_tree, 7)
 insert(example_tree, 13)
+
+print_tree(example_tree)
+print(verification_recursive(example_tree))
